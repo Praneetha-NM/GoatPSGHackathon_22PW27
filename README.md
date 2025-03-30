@@ -47,7 +47,7 @@ The GUI provides several interactive elements for testing the robot fleet manage
     3.  Click on a destination vertex (another circle in the graph) that is not currently occupied by another robot.
 * **Effect:** The selected robot will be assigned a task to navigate to the chosen destination using the shortest path. The robot's status in the dashboard will change to "moving". The robot sprite will start moving towards the destination vertex along the lanes of the graph.
 * **Traffic Management:** If a lane the robot needs to use is occupied by another robot, the robot will stop at the preceding vertex and its status in the dashboard will change to "waiting". It will resume movement once the lane becomes free.
-* **Low Battery:** If you attempt to manually navigate a robot with a low battery (below the defined threshold), a notification will appear, and the navigation command will be rejected.
+* **Low Battery:** If you attempt to manually navigate a robot with a low battery (below the defined threshold), the navigation command will be rejected.**When a robot's battery level falls below 30%, it will automatically find and move to the nearest charging station that is not currently occupied.**
 * **Visual Feedback:** The selected robot will be highlighted (you might need to implement visual highlighting). The robot sprite will move along the graph. The robot's status will be updated in the "Robot Status" section of the dashboard on the right. Notifications about low battery or occupied destinations will appear (printed in the console in this version).
 
     ![Screenshot of the GUI with the "Navigate Robot" button highlighted and a robot selected](screenshots/navigate_select_robot.png)
@@ -59,7 +59,7 @@ The GUI provides several interactive elements for testing the robot fleet manage
 ### 3. Monitoring Robot Status
 
 * **Action:** Observe the "**Robot Status**" section in the dashboard on the right side of the GUI.
-* **Effect:** This section displays a list of all spawned robots and their current status, including their ID (first four characters) and their current state (idle, moving, waiting, charging, task\_complete). The battery level of each robot is visually represented by a bar below its sprite in the graph area.
+* **Effect:** This section displays a list of all spawned robots and their current status, including their ID (first four characters) and their current state (idle, moving, moving_to_charge, charging, task_complete). The battery level of each robot is visually represented by a bar below its sprite in the graph area.
 
 ### 4. Monitoring Logs
 
